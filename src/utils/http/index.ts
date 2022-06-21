@@ -4,6 +4,7 @@ import { checkStatus } from './checkStatusts';
 import type { AxiosError, AxiosResponse } from 'axios';
 import type { CreateAxiosConfig, Result, Transform } from './types';
 import axios from 'axios';
+import { ElMessage } from 'element-plus';
 
 const transform: Transform = {
   // 请求拦截
@@ -20,7 +21,7 @@ const transform: Transform = {
   responseInterceptor(res: AxiosResponse<Result, any>) {
     // 假设后端返回的 error 信息，都有一个 error 字段
     if (res.data.status) {
-      console.log(res.data.msg);
+      ElMessage({ type: 'error', showClose: true, message: res.data.msg });
     }
     return res;
   },
@@ -29,11 +30,11 @@ const transform: Transform = {
     const err: string = error.toString();
     try {
       if (error.code === 'ECONNABORTED') {
-        console.log('接口请求超时，请刷新页面重试。');
+        ElMessage({ type: 'error', showClose: true, message: '接口请求超时，请刷新页面重试。' });
         return Promise.reject(error.message);
       }
       if (err && err.includes('Network Error')) {
-        console.log('网络异常，检查网络是否可用。');
+        ElMessage({ type: 'error', showClose: true, message: '网络异常，检查网络是否可用。' });
         return Promise.reject(err);
       }
     } catch (e) {
