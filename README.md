@@ -7,3 +7,5 @@
 - 代码格式化的方式为 eslint + prettier
 
 由于 vite 暂时没有基于 vue3 完美的预设，故整理此模板。
+
+**注意：** 提交代码时应放弃 `git commit -m "xx"` 的方式，采用 `npm run commit` 以免引起不必要的问题。
