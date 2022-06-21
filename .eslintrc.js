@@ -29,6 +29,7 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 'off',
     'vue/multi-word-component-names': 'off',
     'vue/valid-template-root': 'off',
-    'arrow-parens': 'off'
+    'arrow-parens': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off'
   }
 };
