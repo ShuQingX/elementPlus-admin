@@ -21,19 +21,30 @@ export default [
     url: '/api/login',
     method: 'post',
     timeout: 1000,
-    response: () => {
-      return successResult(adminInfo);
+    response: (opt: Record<string, any>) => {
+      if (opt.body.username === 'admin') {
+        return successResult(adminInfo);
+      }
+      return failedResult();
     }
   },
   {
     url: '/api/logout',
-    method: 'post',
+    method: 'get',
     timeout: 1000,
-    response(opt: Recordable) {
+    response(opt: Record<string, any>) {
       if (opt.handers.Authorization) {
         return successResult();
       }
       return failedResult();
+    }
+  },
+  {
+    url: '/api/register',
+    method: 'post',
+    timeout: 1000,
+    response: () => {
+      return successResult();
     }
   }
 ] as MockMethod[];

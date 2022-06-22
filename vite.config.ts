@@ -5,8 +5,11 @@ import vueJsxPlugin from '@vitejs/plugin-vue-jsx';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import { viteMockServe } from 'vite-plugin-mock';
 import ElementPlus from 'unplugin-element-plus/vite';
+// import Icons from 'unplugin-icons/vite';
+// import IconsResolver from 'unplugin-icons/resolver';
+
+import { viteMockServe } from 'vite-plugin-mock';
 
 const resolve = dir => path.resolve(__dirname, dir);
 
@@ -18,11 +21,28 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
       vueJsxPlugin(),
       // elementPlus 自动导入
       AutoImport({
-        resolvers: [ElementPlusResolver()]
+        resolvers: [
+          // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
+          ElementPlusResolver()
+          // 自动导入图标组件
+          // IconsResolver({
+          //   prefix: 'Icon'
+          // })
+        ]
       }),
       Components({
-        resolvers: [ElementPlusResolver()]
+        resolvers: [
+          // 自动导入 Element Plus 组件
+          ElementPlusResolver()
+          // 自动注册图标组件
+          // IconsResolver({
+          //   enabledCollections: ['ep']
+          // })
+        ]
       }),
+      // Icons({
+      //   autoInstall: true
+      // }),
       // elementPlus 样式导入
       ElementPlus(),
       // mock

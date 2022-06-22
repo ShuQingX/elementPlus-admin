@@ -1,0 +1,38 @@
+.el-input {
+  ::v-deep(.el-input__wrapper) {
+    border-radius: 20px;
+  }
+  .el-input__wrapper {
+    border-radius: 20px;
+  }
+}
+
+.flex-between {
+  ::v-deep(.el-form-item__content) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .el-form-item__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.el-button {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.validate-code__item {
+  .el-form-item__content {
+    display: block;
+  }
+}
+
+.protocol {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
