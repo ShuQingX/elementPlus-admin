@@ -30,6 +30,7 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'vue/valid-template-root': 'off',
     'arrow-parens': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off'
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'vue/no-v-for-template-key': 'off'
   }
 };
