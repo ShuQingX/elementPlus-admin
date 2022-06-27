@@ -2,7 +2,13 @@
   <el-container class="app-container">
     <el-aside :width="isCollapse ? '64px' : '200px'">
       <Logo :is-collapse="isCollapse" />
-      <el-menu :default-active="$route.path" router unique-opened :collapse="isCollapse" :collapse-transition="false">
+      <el-menu
+        :default-active="$route.fullPath"
+        router
+        unique-opened
+        :collapse="isCollapse"
+        :collapse-transition="false"
+      >
         <el-scrollbar>
           <aside-menu v-for="item in menuList" :key="item.path" :menu-item="item"></aside-menu>
         </el-scrollbar>

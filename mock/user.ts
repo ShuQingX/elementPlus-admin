@@ -42,7 +42,7 @@ export default [
     method: 'get',
     timeout: 1000,
     response(opt: Record<string, any>) {
-      if (opt.handers.Authorization) {
+      if (opt.headers.authorization) {
         return successResult();
       }
       return failedResult();

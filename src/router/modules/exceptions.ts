@@ -13,7 +13,7 @@ const routes: RouteRecordRaw[] = [
     },
     children: [
       {
-        path: 'index',
+        path: '404',
         name: '404Page',
         component: NotFound,
         meta: {

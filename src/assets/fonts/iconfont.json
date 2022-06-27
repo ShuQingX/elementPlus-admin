@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1376055",
+      "name": "退出登录",
+      "font_class": "tuichudenglu",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "7090082",
+      "name": "修改密码",
+      "font_class": "xiugaimima",
+      "unicode": "e718",
+      "unicode_decimal": 59160
+    },
+    {
+      "icon_id": "20368700",
+      "name": "切换用户",
+      "font_class": "qiehuanyonghu",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
       "icon_id": "4766695",
       "name": "lock",
       "font_class": "lock",

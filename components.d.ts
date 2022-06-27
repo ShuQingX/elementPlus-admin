@@ -12,6 +12,8 @@ declare module '@vue/runtime-core' {
     ElCollapseTransition: typeof import('element-plus/es')['ElCollapseTransition'];
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider'];
     ElContainer: typeof import('element-plus/es')['ElContainer'];
+    ElDropdown: typeof import('element-plus/es')['ElDropdown'];
+    ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem'];
     ElForm: typeof import('element-plus/es')['ElForm'];
     ElFormItem: typeof import('element-plus/es')['ElFormItem'];
     ElHeader: typeof import('element-plus/es')['ElHeader'];

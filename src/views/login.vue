@@ -2,7 +2,7 @@
   <div class="login-page">
     <div class="login-warrper">
       <div class="login-pic">
-        <img src="@/assets/login.png" alt="login-pic" />
+        <img src="@/assets/images/login.png" alt="login-pic" />
       </div>
       <div class="login-form">
         <div class="login-top">

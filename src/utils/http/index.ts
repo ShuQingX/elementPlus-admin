@@ -5,11 +5,13 @@ import type { AxiosError, AxiosResponse } from 'axios';
 import type { CreateAxiosConfig, Result, Transform } from './types';
 import axios from 'axios';
 import { ElMessage } from 'element-plus';
+import { useUserStore } from '@/store/modules/user';
 
 const transform: Transform = {
   // 请求拦截
   requestInterceptor(config) {
-    const token = ''; // store 中获取 token
+    const userStore = useUserStore();
+    const token = userStore.getToken; // store 中获取 token
     if (token) {
       if (config.headers) {
         config.headers['Authorization'] = token;

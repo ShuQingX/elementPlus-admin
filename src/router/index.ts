@@ -18,12 +18,12 @@ const loginRoute: RouteRecordRaw = { path: '/login', name: 'Login', component: (
 const rootRoute: RouteRecordRaw = { path: '/', name: 'Root', redirect: '/dashboard', component: Layout };
 
 export const errorRoute: RouteRecordRaw = {
-  path: '/pathMatch(.*)*',
+  path: '/:pathMatch(.*)*',
   name: 'ErrorPage',
   component: Layout,
   children: [
     {
-      path: '/pathMatch(.*)*',
+      path: '/:pathMatch(.*)*',
       name: 'ErrorPageSon',
       component: NotFound
     }
