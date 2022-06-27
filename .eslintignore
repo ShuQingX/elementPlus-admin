@@ -11,6 +11,7 @@ node_modules
 .husky
 .local
 /bin
+/src/assets/fonts/**/*
 
 index.html
 components.d.ts

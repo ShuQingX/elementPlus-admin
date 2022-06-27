@@ -1,12 +1,12 @@
 import Mock from 'mockjs';
-import { MockMethod, Recordable } from 'vite-plugin-mock';
+import { MockMethod } from 'vite-plugin-mock';
 import { failedResult, successResult } from './utils';
 
 const Random = Mock.Random;
 
 const token = Random.string('upper', 32, 32);
 
-const adminInfo = {
+const userInfo = {
   userId: '1',
   username: 'admin',
   realName: 'Admin',
@@ -16,6 +16,15 @@ const adminInfo = {
   token
 };
 
+const adminInfo = {
+  ...userInfo,
+  permissions: [
+    { label: '主控台', value: 'dashboard_console' },
+    { label: '列表组件', value: 'comp_list' },
+    { label: 'ErrorPage', value: 'ErrorPage' }
+  ]
+};
+
 export default [
   {
     url: '/api/login',
@@ -23,7 +32,7 @@ export default [
     timeout: 1000,
     response: (opt: Record<string, any>) => {
       if (opt.body.username === 'admin') {
-        return successResult(adminInfo);
+        return successResult(userInfo);
       }
       return failedResult();
     }
@@ -45,6 +54,14 @@ export default [
     timeout: 1000,
     response: () => {
       return successResult();
+    }
+  },
+  {
+    url: '/api/user_info',
+    method: 'get',
+    timeout: 1000,
+    response: () => {
+      return successResult(adminInfo);
     }
   }
 ] as MockMethod[];

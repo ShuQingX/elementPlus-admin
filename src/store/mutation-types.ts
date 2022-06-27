@@ -1,4 +1,5 @@
 export enum UserMutation {
   ACCESS_TOKEN = 'ACCESS-TOKEN',
-  USER_INFO = 'USER-INFO'
+  USER_INFO = 'USER-INFO',
+  PERMISSIONS = 'PERMISSIONS'
 }

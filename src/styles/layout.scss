@@ -1,0 +1,7 @@
+.el-container {
+  height: 100%;
+  ::v-deep .el-menu {
+    height: calc(100% - 64px);
+    border-right: none;
+  }
+}

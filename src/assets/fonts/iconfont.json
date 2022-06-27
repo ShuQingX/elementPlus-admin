@@ -1,0 +1,30 @@
+{
+  "id": "3484179",
+  "name": "common",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4765746",
+      "name": "warning-circle",
+      "font_class": "warning-circle",
+      "unicode": "e785",
+      "unicode_decimal": 59269
+    },
+    {
+      "icon_id": "6351812",
+      "name": "component",
+      "font_class": "component",
+      "unicode": "e733",
+      "unicode_decimal": 59187
+    },
+    {
+      "icon_id": "4765881",
+      "name": "dashboard",
+      "font_class": "dashboard",
+      "unicode": "e78b",
+      "unicode_decimal": 59275
+    }
+  ]
+}

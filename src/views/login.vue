@@ -6,7 +6,7 @@
       </div>
       <div class="login-form">
         <div class="login-top">
-          <img src="@/assets/logo.png" alt="logo" />
+          <img src="@/assets/images/logo.png" alt="logo" />
           <span>ElementPlus Admin</span>
         </div>
         <p class="login-top__desc">Element plus 中后台前端/设计解决方案</p>

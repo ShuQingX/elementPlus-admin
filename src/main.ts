@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { router, setupRouter } from '@/router';
 import { setupStore } from '@/store';
-import { setupElementPlusIcon } from '@/plugins/elementPlus';
+import { setupElementPlusIcon } from '@/plugins';
 import App from './App.vue';
 import '@/styles/index.scss';
 
