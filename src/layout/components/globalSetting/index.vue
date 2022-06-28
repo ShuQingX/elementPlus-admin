@@ -13,7 +13,8 @@ import { useDark, useToggle } from '@vueuse/core';
 import Mode from './mode';
 
 const mode = ref(false);
-const isDark = useDark({ attribute: 'class', valueLight: 'Dark' });
+
+const isDark = useDark({ attribute: 'class', valueDark: 'dark', valueLight: 'light' });
 const toggleDark = useToggle(isDark);
 </script>
 

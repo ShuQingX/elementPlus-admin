@@ -15,8 +15,8 @@ export const useGlobalSettingStore = defineStore({
     }
   },
   actions: {
-    toggleDrawer() {
-      this.isShowDrawer = !this.isShowDrawer;
+    setDrawerState(state: boolean) {
+      this.isShowDrawer = state;
     }
   }
 });

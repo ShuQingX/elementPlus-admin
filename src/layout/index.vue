@@ -22,7 +22,7 @@
     </el-container>
 
     <!-- setting -->
-    <el-drawer v-model="drawer" title="项目配置" size="25%" @close="closeDrawer">
+    <el-drawer v-model="drawer" title="项目配置" size="25%" @close="closeDrawer(false)">
       <GlobalSetting />
     </el-drawer>
   </el-container>
@@ -36,15 +36,21 @@ import GlobalSetting from './components/globalSetting/index.vue';
 
 import { useAsyncRouteStroe } from '@/store/modules/asyncRoute';
 import { useGlobalSettingStore } from '@/store/modules/globalSetting';
-import { ref } from 'vue';
-import { computed } from '@vue/reactivity';
+import { ref, computed } from 'vue';
 
 const asyncRouteStore = useAsyncRouteStroe();
 const globalSettingStore = useGlobalSettingStore();
 
 //* 抽屉
-const drawer = computed(() => globalSettingStore.getDrawerState);
-const closeDrawer = globalSettingStore.toggleDrawer;
+const drawer = computed({
+  get() {
+    return globalSettingStore.getDrawerState;
+  },
+  set(newValue) {
+    globalSettingStore.setDrawerState(newValue);
+  }
+});
+const closeDrawer = globalSettingStore.setDrawerState;
 
 //* 菜单列表
 const menuList = asyncRouteStore.getMenuList;

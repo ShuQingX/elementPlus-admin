@@ -1,0 +1,5 @@
+/* dark theme */
+html.dark {
+  --white-bg-color: #000;
+  --app-bg-color: #000;
+}

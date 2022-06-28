@@ -2,7 +2,8 @@
 @import url('../assets//fonts//iconfont.css');
 
 @import url('element-plus/theme-chalk/dark/css-vars.css'); // 暗黑模式变量
-@import url('./theme.css');
+@import url('./theme-dark.css');
+@import url('./theme-light.css');
 
 #app,
 body,

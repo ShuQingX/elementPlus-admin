@@ -15,7 +15,7 @@
           </el-dropdown-item>
         </template>
       </el-dropdown>
-      <Icon icon="icon-setting" @click="setting"></Icon>
+      <Icon icon="icon-setting" @click="setting(true)"></Icon>
     </div>
   </el-header>
 </template>
@@ -36,7 +36,7 @@ const globalSettingStore = useGlobalSettingStore();
 const router = useRouter();
 
 //* 设置
-const setting = globalSettingStore.toggleDrawer;
+const setting = globalSettingStore.setDrawerState;
 
 //* 头像
 const avatarUrl = userStore.getAvatar;
