@@ -2,12 +2,21 @@ import { useAsyncRouteStroe } from '@/store/modules/asyncRoute';
 import { errorRoute } from '.';
 import { Router } from 'vue-router';
 import { useUserStore } from '@/store/modules/user';
+import { ElLoading } from 'element-plus';
+import nProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+
+// 进度条配置
+nProgress.configure({
+  showSpinner: false
+});
 
 // 路由 name 组成的白名单
 const whiteList = ['Login'];
 
 type RedirectType = { name: string; replace: boolean; query?: Recordable };
 
+let loading: any;
 export function createRouteGuard(router: Router) {
   const asyncRouteStore = useAsyncRouteStroe();
   const userStore = useUserStore();
@@ -15,6 +24,9 @@ export function createRouteGuard(router: Router) {
   // 路由 前置守卫
   router.beforeEach(async (to, from, next) => {
     const token = userStore.getToken;
+
+    nProgress.start();
+    loading = ElLoading.service({ lock: true });
 
     // 查看是否在白名单内
     if (whiteList.includes(to.name as string)) {
@@ -56,5 +68,13 @@ export function createRouteGuard(router: Router) {
     const redirectPath = (from.query.redirect || to.path) as string;
     const nextData = to.path === redirectPath ? { ...to, replace: true } : { path: redirectPath };
     next(nextData);
+  });
+
+  router.afterEach((to, from) => {
+    // 设置页面 title
+    document.title = (to.meta?.title || document.title) as string;
+
+    nProgress.done();
+    loading.close();
   });
 }
