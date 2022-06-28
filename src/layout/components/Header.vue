@@ -15,7 +15,7 @@
           </el-dropdown-item>
         </template>
       </el-dropdown>
-      <Icon icon="icon-setting"></Icon>
+      <Icon icon="icon-setting" @click="setting"></Icon>
     </div>
   </el-header>
 </template>
@@ -24,17 +24,24 @@
 import Icon from '@/components/common/Icon';
 import { ElMessage } from 'element-plus';
 import screenfull from 'screenfull';
-import { reactive, ref, useSlots } from 'vue';
+import { reactive, ref } from 'vue';
 import { useUserStore } from '@/store/modules/user';
+import { useGlobalSettingStore } from '@/store/modules/globalSetting';
 import { useRouter } from 'vue-router';
 
 defineEmits(['menuCollapse']);
 
 const userStore = useUserStore();
+const globalSettingStore = useGlobalSettingStore();
 const router = useRouter();
 
+//* 设置
+const setting = globalSettingStore.toggleDrawer;
+
+//* 头像
 const avatarUrl = userStore.getAvatar;
 
+//* 个人信息
 const dropdownMenu = reactive([
   { icon: 'icon-qiehuanyonghu', title: '个人设置', command: 'setting' },
   { icon: 'icon-xiugaimima', title: '修改密码', command: 'changePassword' },
@@ -55,6 +62,7 @@ const dropdownCommand = async (command: string) => {
   }
 };
 
+//* 全屏
 const isScreen = ref(screenfull.isFullscreen);
 const screen = async () => {
   if (screenfull.isEnabled) {

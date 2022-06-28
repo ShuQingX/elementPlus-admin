@@ -20,6 +20,11 @@
         <router-view></router-view>
       </el-main>
     </el-container>
+
+    <!-- setting -->
+    <el-drawer v-model="drawer" title="项目配置" size="25%" @close="closeDrawer">
+      <GlobalSetting />
+    </el-drawer>
   </el-container>
 </template>
 
@@ -27,15 +32,25 @@
 import AsideMenu from './components/AsideMenu.vue';
 import Logo from './components/Logo.vue';
 import LayoutHeader from './components/Header.vue';
+import GlobalSetting from './components/globalSetting/index.vue';
 
 import { useAsyncRouteStroe } from '@/store/modules/asyncRoute';
+import { useGlobalSettingStore } from '@/store/modules/globalSetting';
 import { ref } from 'vue';
+import { computed } from '@vue/reactivity';
 
 const asyncRouteStore = useAsyncRouteStroe();
+const globalSettingStore = useGlobalSettingStore();
 
+//* 抽屉
+const drawer = computed(() => globalSettingStore.getDrawerState);
+const closeDrawer = globalSettingStore.toggleDrawer;
+
+//* 菜单列表
 const menuList = asyncRouteStore.getMenuList;
-const isCollapse = ref<boolean>(false);
 
+//* 菜单伸缩
+const isCollapse = ref<boolean>(false);
 const menuCollapse = () => {
   isCollapse.value = !isCollapse.value;
 };

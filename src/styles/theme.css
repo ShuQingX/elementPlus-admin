@@ -1,0 +1,11 @@
+/* dark theme */
+html.dark {
+  --white-bg-color: none;
+  --app-bg-color: none;
+}
+
+/* linght theme */
+:root {
+  --white-bg-color: '#fff';
+  --app-bg-color: #f7f7f7;
+}
