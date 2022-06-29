@@ -9,10 +9,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useGlobalSettingStore } from '@/store/modules/globalSetting';
 import { useDark, useToggle } from '@vueuse/core';
 import Mode from './mode';
 
-const mode = ref(false);
+const globalSettingStore = useGlobalSettingStore();
+
+const mode = ref(false || globalSettingStore.getThemeMode);
 
 const isDark = useDark({ attribute: 'class', valueDark: 'dark', valueLight: 'light' });
 const toggleDark = useToggle(isDark);

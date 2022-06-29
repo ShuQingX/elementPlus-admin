@@ -8,6 +8,9 @@
         unique-opened
         :collapse="isCollapse"
         :collapse-transition="false"
+        background-color="var(--background-color)"
+        text-color="var(--text-color)"
+        active-text-color="var(--active-text-color)"
       >
         <el-scrollbar>
           <aside-menu v-for="item in menuList" :key="item.path" :menu-item="item"></aside-menu>
@@ -52,6 +55,9 @@ const drawer = computed({
 });
 const closeDrawer = globalSettingStore.setDrawerState;
 
+//* 主题
+globalSettingStore.setThemeMode();
+
 //* 菜单列表
 const menuList = asyncRouteStore.getMenuList;
 
@@ -64,4 +70,21 @@ const menuCollapse = () => {
 
 <style lang="scss" scoped>
 @import '@/styles/layout.scss';
+</style>
+
+<style lang="scss">
+// layout 主题
+.light {
+  .el-menu-item.is-active {
+    background-color: var(--el-color-primary);
+  }
+}
+.dark,
+.light {
+  .el-menu-item {
+    &:hover {
+      color: var(--menu-hover-color);
+    }
+  }
+}
 </style>

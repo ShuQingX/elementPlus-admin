@@ -46,7 +46,8 @@
       line-height: 64px;
       height: 64px;
       align-items: center;
-      background-color: var(--white-bg-color);
+      background-color: var(--background-color);
+      color: var(--text-color);
       cursor: pointer;
       img {
         width: 32px;

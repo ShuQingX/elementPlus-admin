@@ -2,4 +2,10 @@
 :root {
   --app-bg-color: #f7f7f7;
   --white-bg-color: #fff;
+
+  /* menu 以及 logo */
+  --background-color: #001428;
+  --text-color: rgb(187, 187, 187);
+  --active-text-color: #fff;
+  --menu-hover-color: #fff;
 }

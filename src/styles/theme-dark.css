@@ -1,5 +1,11 @@
 /* dark theme */
 html.dark {
-  --white-bg-color: #000;
+  --white-bg-color: #18181c;
   --app-bg-color: #000;
+
+  /* menu 以及 logo */
+  --background-color: #18181c;
+  --text-color: #fff;
+  --active-text-color: var(--el-color-primary);
+  --menu-hover-color: #fff;
 }
