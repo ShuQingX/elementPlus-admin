@@ -22,6 +22,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// 让顶部加载调跟随主题颜色的更改而更改
+#nprogress .bar {
+  background-color: var(--el-color-primary);
+}
+
 /* 滚动条凹槽的颜色，还可以设置边框属性 */
 *::-webkit-scrollbar-track-piece {
   background-color: #f8f8f8;
