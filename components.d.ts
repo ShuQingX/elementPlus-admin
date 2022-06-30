@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     ElButton: typeof import('element-plus/es')['ElButton'];
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox'];
     ElCollapseTransition: typeof import('element-plus/es')['ElCollapseTransition'];
+    ElColorPicker: typeof import('element-plus/es')['ElColorPicker'];
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider'];
     ElContainer: typeof import('element-plus/es')['ElContainer'];
     ElDivider: typeof import('element-plus/es')['ElDivider'];
